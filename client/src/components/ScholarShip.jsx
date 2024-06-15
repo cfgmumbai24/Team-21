@@ -85,7 +85,7 @@ function ScholarShip() {
         <h3 style={titleStyle}>{title}</h3>
         <p style={contentStyle}>{content}</p>
       </div>
-      <a href="#" style={buttonStyle}>Apply Now</a>
+      <a href="https://mahadbt.maharashtra.gov.in/Home/Index" style={buttonStyle}>Apply Now</a>
     </div>
   );
 
