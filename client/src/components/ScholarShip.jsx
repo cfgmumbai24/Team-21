@@ -1,8 +1,20 @@
 import React from 'react';
+import NavBar from './Siderbar/NavBar';
+import SidebarComponent from './Siderbar/Sidebar';
 
 function ScholarShip() {
+  const mainContainerStyle = {
+    display: 'flex',
+  };
+
+  const contentContainerStyle = {
+    marginLeft: '80px', // Adjust based on the width of the sidebar
+    padding: '16px',
+    flex: '1',
+  };
+
   const cardStyle = {
-    height: '16rem',
+    height: '18rem',
     border: '1px solid #ccc',
     borderRadius: '8px',
     padding: '16px',
@@ -42,7 +54,7 @@ function ScholarShip() {
   const buttonStyle = {
     alignSelf: 'flex-end',
     padding: '8px 16px',
-    backgroundColor: '#007BFF',
+    backgroundColor: '#57321A', // Updated background color
     color: '#fff',
     border: 'none',
     borderRadius: '4px',
@@ -64,19 +76,7 @@ function ScholarShip() {
     {
       title: 'Eklavya Scholarship',
       content: 'Eklavya Scholarship is for postgraduate students with a first-class degree in arts, science, or commerce.',
-    },
-    {
-      title: 'Maharashtra State Government Open Merit Scholarship',
-      content: 'This scholarship is for students who have secured 60% or more in their HSC exams.',
-    },
-    {
-      title: 'Post-Matric Scholarship for SBC Students, Maharashtra',
-      content: 'This scholarship is for students from the Special Backward Classes (SBC) pursuing post-matric education.',
-    },
-    {
-      title: 'Dr. Panjabrao Deshmukh Vasatigruh Nirvah Bhatta Yojna',
-      content: 'This scheme provides hostel fees and maintenance allowances to economically backward students.',
-    },
+    }
   ];
 
   const Card = ({ title, content }) => (
@@ -90,16 +90,24 @@ function ScholarShip() {
   );
 
   return (
-    <div style={wrapperStyle}>
-      <div style={containerStyle}>
-        {scholarships.slice(0, 3).map((scholarship, index) => (
-          <Card key={index} title={scholarship.title} content={scholarship.content} />
-        ))}
-      </div>
-      <div style={containerStyle}>
-        {scholarships.slice(3, 6).map((scholarship, index) => (
-          <Card key={index} title={scholarship.title} content={scholarship.content} />
-        ))}
+    <div>
+      <NavBar />
+      <div style={mainContainerStyle}>
+        <SidebarComponent />
+        <div style={contentContainerStyle}>
+          <div style={wrapperStyle}>
+            <div style={containerStyle}>
+              {scholarships.slice(0, 3).map((scholarship, index) => (
+                <Card key={index} title={scholarship.title} content={scholarship.content} />
+              ))}
+            </div>
+            <div style={containerStyle}>
+              {scholarships.slice(3, 6).map((scholarship, index) => (
+                <Card key={index} title={scholarship.title} content={scholarship.content} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
