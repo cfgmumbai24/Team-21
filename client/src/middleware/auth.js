@@ -12,7 +12,6 @@ export const AuthorizeUser = ({ children }) => {
     return children;
 }
 
-
 export const ProtectRoute = ({ children }) => {
     const username = useAuthStore.getState().auth.username;
     if(!username){

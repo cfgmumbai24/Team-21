@@ -12,7 +12,6 @@ import Recovery from './components/Recovery';
 import Reset from './components/Reset';
 import PageNotFound from './components/PageNotFound';
 
-
 /** auth middleware */
 import { AuthorizeUser, ProtectRoute } from './middleware/auth'
 import Hehe from './components/Hehe';
@@ -64,3 +63,4 @@ export default function App() {
     </main>
   )
 }
+
