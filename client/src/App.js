@@ -21,6 +21,7 @@ import ScholarShip from './components/ScholarShip';
 import Learning from './components/Siderbar/Learnings';
 import NavBar from './components/Siderbar/NavBar';
 import Assessments from './components/Siderbar/Assessments';
+import StudentProfile from './components/Siderbar/StudentProfile';
 
 /** root routes */
 const router = createBrowserRouter([
@@ -76,6 +77,9 @@ const router = createBrowserRouter([
     },{
         path:"/assessment",
         element:<Assessments></Assessments>
+    },{
+        path:"/studentProfile",
+        element:<StudentProfile></StudentProfile>
     }
 ])
 

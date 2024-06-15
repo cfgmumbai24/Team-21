@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AverageAssessmentCard = () => {
+  console.log("hello")
   // Hard-coded data for average assessment score
   const averageAssessmentScore = {
     title: 'Average Assessment Score',
