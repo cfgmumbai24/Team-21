@@ -27,7 +27,7 @@ import StudentProfile from './components/Siderbar/StudentProfile';
 const router = createBrowserRouter([
     {
         path : '/',
-        element : <Username></Username>
+        element : <Profile></Profile>
     },
     {
         path:'/mentor',
