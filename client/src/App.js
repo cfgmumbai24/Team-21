@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 
 /** import all components */
+import Mentor from './components/Mentor'
 import Username from './components/Username';
 import Password from './components/Password';
 import Register from './components/Register';
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
     {
         path : '/',
         element : <Username></Username>
+    },
+    {
+        path:'/mentor',
+        element:<Mentor></Mentor>
     },
     {
         path : '/register',
