@@ -60,11 +60,11 @@ export default function Register() {
                   <input {...formik.getFieldProps('email')} className={styles.textbox} type="text" placeholder='Email*' />
                   <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username*' />
                   <input {...formik.getFieldProps('password')} className={styles.textbox} type="password" placeholder='Password*' />
-                  <button className={styles.btn} type='submit'>Register</button>
+                  <button to="/username"className={styles.btn} type='submit'>Register</button>
               </div>
 
               <div className="text-center py-4">
-                <span className='text-gray-500'>Already Register? <Link className='text-red-500' to="/">Login Now</Link></span>
+                <span className='text-gray-500'>Already Register? <Link className='text-red-500' to="/username">Login Now</Link></span>
               </div>
 
           </form>

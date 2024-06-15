@@ -64,7 +64,7 @@ const SidebarMentor = () => {
                         }
                     </MenuItem>
                     </Link>
-                    <MenuItem component={<Link to="/calender" />} className='mt-4'>
+                    <MenuItem component={<Link to="/mentorCalender" />} className='mt-4'>
                         {
                             collapsed ? <QuizIcon />
                                 : (
