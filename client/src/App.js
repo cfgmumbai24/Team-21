@@ -19,9 +19,9 @@ import SidebarComponent from './components/Siderbar/Sidebar';
 import Calendar from './components/Siderbar/Calender';
 import ScholarShip from './components/ScholarShip';
 import Learning from './components/Siderbar/Learnings';
-import NavBar from './components/Siderbar/NavBar';
 import Assessments from './components/Siderbar/Assessments';
 import StudentProfile from './components/Siderbar/StudentProfile';
+import MentorProfile from './components/MentorProfile';
 
 /** root routes */
 const router = createBrowserRouter([
@@ -80,6 +80,9 @@ const router = createBrowserRouter([
     },{
         path:"/studentProfile",
         element:<StudentProfile></StudentProfile>
+    },{
+        path:"/mentorProfile",
+        element:<MentorProfile></MentorProfile>
     }
 ])
 
