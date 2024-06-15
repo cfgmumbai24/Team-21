@@ -100,8 +100,17 @@ export default function Profile() {
               </div>
 
               <div className="flex w-full gap-5">
-                <input {...formik.getFieldProps('mobile')} className="w-full p-2 border border-gray-300 rounded" type="text" placeholder='Mobile No.' />
+                <input
+                  {...formik.getFieldProps('mobile')}
+                  className="w-full p-2 border border-gray-300 rounded"
+                  type="number"
+                  placeholder='Mobile No.'
+                  pattern="\d*"
+                  inputMode="numeric"
+                  onInput={(e) => e.target.value = e.target.value.replace(/[^0-9]/g, '')}
+                />
               </div>
+
 
               <input {...formik.getFieldProps('email')} className="w-full p-2 border border-gray-300 rounded" type="text" placeholder='Email*' />
 
