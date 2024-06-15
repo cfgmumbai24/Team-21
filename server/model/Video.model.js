@@ -7,6 +7,8 @@ const VideoSchema = new mongoose.Schema({
   teacher_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Teacher', required: true },
   course_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
   uploaded_at: { type: Date, default: Date.now }
+},{
+    timestamps: true
 });
 
 module.exports = mongoose.model('Video', VideoSchema);

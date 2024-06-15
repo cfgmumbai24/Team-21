@@ -12,6 +12,7 @@ const StudentSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   mobile : { type : Number},
   community: { type: String, required: true },
+  attendance: {type: Number},
   education_level: { type: String, required: true },  // UG, PG, or Global
   district: { type: String, required: true },
   state: { type: String, required: true },
@@ -21,8 +22,8 @@ const StudentSchema = new mongoose.Schema({
   courses_enrolled: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
   assessments: [AssessmentSchema],
   scholarships: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Scholarship' }],
-  created_at: { type: Date, default: Date.now },
-  updated_at: { type: Date, default: Date.now }
+},{
+  timestamps: true
 });
 
 module.exports = mongoose.model('Student', StudentSchema);
