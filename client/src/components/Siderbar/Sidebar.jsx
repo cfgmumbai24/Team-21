@@ -51,6 +51,7 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
+                    <Link to={'/calender'}>
                     <MenuItem className='mt-4'>
                         {
                             collapsed ? <LocalLibraryIcon />
@@ -62,6 +63,7 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
+                    </Link>
                     <MenuItem component={<Link to="/experience" />} className='mt-4'>
                         {
                             collapsed ? <QuizIcon />

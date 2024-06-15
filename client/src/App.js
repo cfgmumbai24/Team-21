@@ -16,6 +16,8 @@ import PageNotFound from './components/PageNotFound';
 import { AuthorizeUser, ProtectRoute } from './middleware/auth'
 import Hehe from './components/Hehe';
 import SidebarComponent from './components/Siderbar/Sidebar';
+import Calendar from './components/Siderbar/Calender';
+import ScholarShip from './components/ScholarShip';
 
 /** root routes */
 const router = createBrowserRouter([
@@ -44,10 +46,17 @@ const router = createBrowserRouter([
         element : <Recovery></Recovery>
     },
     {
+        path:'/calender',
+        element:<Calendar></Calendar>
+    },
+    {
         path : '/reset',
         element : <Reset></Reset>
     },
-    
+    {
+        path:'/scholarship',
+        element:<ScholarShip></ScholarShip>
+    },
     { path: '/hehe',
       element: <AuthorizeUser><Hehe/></AuthorizeUser>
     },
@@ -56,7 +65,7 @@ const router = createBrowserRouter([
         element : <PageNotFound></PageNotFound>
     },
     {
-        path: "/scholarships",
+        path: "/sidebar",
         element: <SidebarComponent></SidebarComponent>
     }
 ])
