@@ -52,22 +52,12 @@ export default function Register() {
         <div className={styles.glass} style={{ width: "45%", paddingTop: '3em'}}>
 
           <div className="title flex flex-col items-center">
-            <h4 className='text-5xl font-bold'>Register</h4>
-            <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
-                Happy to join you!
-            </span>
+          <h4 className='text-3xl font-bold' style={{ marginBottom: '0.6em' }}>Register</h4>
           </div>
 
           <form className='py-1' onSubmit={formik.handleSubmit}>
-              <div className='profile flex justify-center py-4'>
-                  <label htmlFor="profile">
-                    <img src={file || avatar} className={styles.profile_img} alt="avatar" />
-                  </label>
-                  
-                  <input onChange={onUpload} type="file" id='profile' name='profile' />
-              </div>
 
-              <div className="textbox flex flex-col items-center gap-6">
+              <div className="textbox flex flex-col items-center gap-7">
                   <input {...formik.getFieldProps('email')} className={styles.textbox} type="text" placeholder='Email*' />
                   <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username*' />
                   <input {...formik.getFieldProps('password')} className={styles.textbox} type="text" placeholder='Password*' />
