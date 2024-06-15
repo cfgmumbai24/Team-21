@@ -50,13 +50,6 @@ export default function Password() {
       <div className='flex justify-center items-center h-screen'>
         <div className={styles.glass}>
 
-          <div className="title flex flex-col items-center">
-            <h4 className='text-5xl font-bold'>Hello {apiData?.firstName || apiData?.username}</h4>
-            <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
-              Explore More by connecting with us.
-            </span>
-          </div>
-
           <form className='py-1' onSubmit={formik.handleSubmit}>
               <div className='profile flex justify-center py-4'>
                   <img src={apiData?.profile || avatar} className={styles.profile_img} alt="avatar" />
