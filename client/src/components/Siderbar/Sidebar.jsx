@@ -40,7 +40,7 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
-                    <MenuItem component={<Link to="/interview" />} className='mt-4'>
+                    <MenuItem component={<Link to="/dashboard" />} className='mt-4'>
                         {
                             collapsed ? <Face2Icon />
                                 : (
@@ -51,7 +51,7 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
-                    <Link to={'/calender'}>
+                    <Link to={'/learning'}>
                     <MenuItem className='mt-4'>
                         {
                             collapsed ? <LocalLibraryIcon />
@@ -64,7 +64,7 @@ const SidebarComponent = () => {
                         }
                     </MenuItem>
                     </Link>
-                    <MenuItem component={<Link to="/experience" />} className='mt-4'>
+                    <MenuItem component={<Link to="/assessment" />} className='mt-4'>
                         {
                             collapsed ? <QuizIcon />
                                 : (
@@ -75,7 +75,7 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
-                    <MenuItem component={<Link to="/experience" />} className='mt-4'>
+                    <MenuItem component={<Link to="/calender" />} className='mt-4'>
                         {
                             collapsed ? <CalendarMonthIcon />
                                 : (
@@ -86,7 +86,7 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
-                    <MenuItem component={<Link to="/experience" />} className='mt-4'>
+                    <MenuItem component={<Link to="/scholarship" />} className='mt-4'>
                         {
                             collapsed ? <EmojiEventsIcon />
                                 : (
@@ -97,7 +97,7 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
-                    <MenuItem component={<Link to="/experience" />} className='mt-4'>
+                    <MenuItem component={<Link to="/event" />} className='mt-4'>
                         {
                             collapsed ? <WebhookIcon />
                                 : (

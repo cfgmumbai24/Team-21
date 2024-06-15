@@ -18,6 +18,9 @@ import Hehe from './components/Hehe';
 import SidebarComponent from './components/Siderbar/Sidebar';
 import Calendar from './components/Siderbar/Calender';
 import ScholarShip from './components/ScholarShip';
+import Learning from './components/Siderbar/Learnings';
+import NavBar from './components/Siderbar/NavBar';
+import Assessments from './components/Siderbar/Assessments';
 
 /** root routes */
 const router = createBrowserRouter([
@@ -67,6 +70,12 @@ const router = createBrowserRouter([
     {
         path: "/sidebar",
         element: <SidebarComponent></SidebarComponent>
+    },{
+        path:"/learning",
+        element:<Learning></Learning>
+    },{
+        path:"/assessment",
+        element:<Assessments></Assessments>
     }
 ])
 
