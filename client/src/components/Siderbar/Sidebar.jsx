@@ -40,7 +40,7 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
-                    <MenuItem component={<Link to="/dashboard" />} className='mt-4'>
+                    <MenuItem component={<Link to="/studentProfile" />} className='mt-4'>
                         {
                             collapsed ? <Face2Icon />
                                 : (
@@ -93,17 +93,6 @@ const SidebarComponent = () => {
                                     <div className='flex justify-start items-center'>
                                     <EmojiEventsIcon />
                                         <div className='ml-2'>Scholarships</div>
-                                    </div>
-                                )
-                        }
-                    </MenuItem>
-                    <MenuItem component={<Link to="/event" />} className='mt-4'>
-                        {
-                            collapsed ? <WebhookIcon />
-                                : (
-                                    <div className='flex justify-start items-center'>
-                                    <WebhookIcon />
-                                        <div className='ml-2'>Events</div>
                                     </div>
                                 )
                         }
