@@ -2,6 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import router from './router/route.js';
+import mentorRouter from './router/mentorRouter.js';
+import studentRouter from './router/studentRouter.js';
+import teacherRouter from './router/teacherRouter.js';
+import courseRouter from './router/courseRouter.js';
 import dotenv from 'dotenv';
 import mongoose from "mongoose";
 dotenv.config();
@@ -24,6 +28,11 @@ app.get('/', (req, res) => {
 
 /** api routes */
 app.use('/api', router)
+app.use("/api/mentor", mentorRouter);
+app.use("/api/admin/video", mentorRouter);
+app.use("/api/student/", studentRouter);
+app.use("/api/teacher/", teacherRouter);
+app.use("/api/course/", courseRouter);
 
 // Function to connect to the MongoDB database
 const connect = async () => {

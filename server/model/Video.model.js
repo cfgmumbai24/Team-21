@@ -6,7 +6,7 @@ const VideoSchema = new mongoose.Schema({
   url: { type: String, required: true },  // URL to the video
   teacher_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Teacher', required: true },
   course_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
-  uploaded_at: { type: Date, default: Date.now }
+  // uploaded_at: { type: Date, default: Date.now }
 },{
     timestamps: true
 });
