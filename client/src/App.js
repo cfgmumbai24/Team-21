@@ -23,7 +23,7 @@ import ScholarShip from './components/ScholarShip';
 const router = createBrowserRouter([
     {
         path : '/',
-        element : <Username></Username>
+        element : <Profile></Profile>
     },
     {
         path:'/mentor',
