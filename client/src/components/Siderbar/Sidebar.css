@@ -1,0 +1,19 @@
+.sidebar {
+    display: flex;
+    color: black;
+    height: 100vh;
+    transition: width 0.3s ease;
+    background-color: rgb(248, 248, 248);
+}
+
+.sidebar.collapsed {
+    height: 100vh;
+}
+
+
+
+.sidebar .menu-item {
+    font-size: 18px;
+    margin-bottom: 20px;
+    /* Increase vertical spacing between menu items */
+}

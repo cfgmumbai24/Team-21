@@ -15,6 +15,7 @@ import PageNotFound from './components/PageNotFound';
 /** auth middleware */
 import { AuthorizeUser, ProtectRoute } from './middleware/auth'
 import Hehe from './components/Hehe';
+import SidebarComponent from './components/Siderbar/Sidebar';
 
 /** root routes */
 const router = createBrowserRouter([
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         path : '*',
         element : <PageNotFound></PageNotFound>
     },
+    {
+        path: "/scholarships",
+        element: <SidebarComponent></SidebarComponent>
+    }
 ])
 
 export default function App() {
