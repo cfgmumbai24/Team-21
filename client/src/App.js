@@ -22,28 +22,25 @@ import Learning from './components/Siderbar/Learnings';
 import Assessments from './components/Siderbar/Assessments';
 import StudentProfile from './components/Siderbar/StudentProfile';
 import MentorProfile from './components/MentorProfile';
+import MentorCalendar from './components/MentorCalender';
+import FeedbackForm from './components/Siderbar/FeedbackForm';
+import Role from './components/Role';
 
 /** root routes */
 const router = createBrowserRouter([
     {
-        path : '/',
-        element : <Profile></Profile>
     },
     {
         path:'/mentor',
         element:<Mentor></Mentor>
     },
     {
-        path : '/register',
+        path : '/',
         element : <Register></Register>
     },
     {
         path : '/password',
         element : <ProtectRoute><Password /></ProtectRoute>
-    },
-    {
-        path : '/profile',
-        element : <AuthorizeUser><Profile /></AuthorizeUser>
     },
     {
         path : '/recovery',
@@ -83,6 +80,19 @@ const router = createBrowserRouter([
     },{
         path:"/mentorProfile",
         element:<MentorProfile></MentorProfile>
+    },{
+        path:"/mentorCalender",
+        element:<MentorCalendar></MentorCalendar>
+    }
+    ,{
+        path:"/feedback",
+        element:<FeedbackForm></FeedbackForm>
+    },{
+        path:"/username",
+        element:<Username></Username>
+    },{
+        path:"/role",
+        element:<Role></Role>
     }
 ])
 
