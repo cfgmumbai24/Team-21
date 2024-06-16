@@ -1,0 +1,89 @@
+{
+    "students": [
+      {
+        "student_id": 1,
+        "name": "Aarav Singh",
+        "language": "Hindi",
+        "interests": ["math", "science"],
+        "skills": ["algebra", "biology"],
+        "state_district": "MH_Mumbai"
+      },
+      {
+        "student_id": 2,
+        "name": "Meera Natarajan",
+        "language": "Tamil",
+        "interests": ["art", "painting"],
+        "skills": ["painting"],
+        "state_district": "TN_Chennai"
+      },
+      {
+        "student_id": 3,
+        "name": "Rohit Banerjee",
+        "language": "Bengali",
+        "interests": ["biology", "physics"],
+        "skills": ["biology", "physics"],
+        "state_district": "WB_Kolkata"
+      },
+      {
+        "student_id": 4,
+        "name": "Anaya Patil",
+        "language": "Marathi",
+        "interests": ["science", "math"],
+        "skills": ["physics", "geometry"],
+        "state_district": "MH_Pune"
+      },
+      {
+        "student_id": 5,
+        "name": "Arjun Sharma",
+        "language": "Hindi",
+        "interests": ["biology", "painting"],
+        "skills": ["biology", "painting"],
+        "state_district": "DL_Delhi"
+      }
+    ],
+    "mentors": [
+      {
+        "mentor_id": 1,
+        "name": "Dr. Suresh Gupta",
+        "subject": ["math", "science"],
+        "language": "Hindi",
+        "state_district": "MH_Mumbai"
+      },
+      {
+        "mentor_id": 2,
+        "name": "Prof. Lakshmi Iyer",
+        "subject": ["art"],
+        "language": "Tamil",
+        "state_district": "TN_Chennai"
+      },
+      {
+        "mentor_id": 3,
+        "name": "Dr. Anindya Sen",
+        "subject": ["biology", "physics"],
+        "language": "Bengali",
+        "state_district": "WB_Kolkata"
+      },
+      {
+        "mentor_id": 4,
+        "name": "Dr. Kavita Deshmukh",
+        "subject": ["science", "math"],
+        "language": "Marathi",
+        "state_district": "MH_Pune"
+      },
+      {
+        "mentor_id": 5,
+        "name": "Prof. Rajiv Mehta",
+        "subject": ["biology", "art"],
+        "language": "Hindi",
+        "state_district": "DL_Delhi"
+      }
+    ],
+    "assignments": {
+      "1": 1,  
+      "2": 2,  
+      "3": 3,  
+      "4": 4,  
+      "5": 5   
+    }
+  }
+  
