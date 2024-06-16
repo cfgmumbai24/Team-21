@@ -25,6 +25,10 @@ import MentorProfile from './components/MentorProfile';
 import StudentDashboard from './components/StudentDashboard';
 import MentorDashboard from './components/MentorDashboard';
 import AdminDashboard from './components/AdminDashboard';
+import Role from './components/Role';
+import Feedback from './charts/mentor/Feedback';
+import FeedbackForm from './components/Siderbar/FeedbackForm';
+import MentorCalendar from './components/MentorCalender';
 
 
 /** root routes */
@@ -92,6 +96,18 @@ const router = createBrowserRouter([
     {
         path:"/adminDashboard",
         element:<AdminDashboard></AdminDashboard>
+    },{
+        path:"/role",
+        element:<Role></Role>
+    },{
+        path:"/feedback",
+        element:<FeedbackForm></FeedbackForm>
+    },{
+        path:"mentorCalender",
+        element:<MentorCalendar></MentorCalendar>
+    },{
+        path:"/username",
+        element:<Username></Username>
     }
 ])
 

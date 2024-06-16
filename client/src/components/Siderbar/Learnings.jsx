@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Box,
   Checkbox,
@@ -12,50 +13,42 @@ import {
   Card,
   CardContent,
   CssBaseline,
-  Grid
+  Grid,
+  MenuItem,
+  Select,
+  InputLabel,
+  FormControl
 } from '@mui/material';
-
 import SidebarComponent from './Sidebar';
 import NavBar from './NavBar';
+import subjects from './LearningData';
 
-const subjects = [
-  {
-    name: 'Math',
-    videos: [
-      { id: 'math1', label: 'Math Video 1', link: 'https://www.youtube.com/watch?v=example1' },
-      { id: 'math2', label: 'Math Video 2', link: 'https://www.youtube.com/watch?v=example2' },
-      { id: 'math3', label: 'Math Video 3', link: 'https://www.youtube.com/watch?v=example3' },
-    ],
+const axiosInstance = axios.create({
+  baseURL: 'http://localhost:8080/api',
+  headers: {
+    'Content-Type': 'application/json',
   },
-  {
-    name: 'Science',
-    videos: [
-      { id: 'science1', label: 'Science Video 1', link: 'https://www.youtube.com/watch?v=example4' },
-      { id: 'science2', label: 'Science Video 2', link: 'https://www.youtube.com/watch?v=example5' },
-      { id: 'science3', label: 'Science Video 3', link: 'https://www.youtube.com/watch?v=example6' },
-    ],
-  },
-  {
-    name: 'History',
-    videos: [
-      { id: 'history1', label: 'History Video 1', link: 'https://www.youtube.com/watch?v=example7' },
-      { id: 'history2', label: 'History Video 2', link: 'https://www.youtube.com/watch?v=example8' },
-      { id: 'history3', label: 'History Video 3', link: 'https://www.youtube.com/watch?v=example9' },
-    ],
-  },
-  {
-    name: 'English',
-    videos: [
-      { id: 'english1', label: 'English Video 1', link: 'https://www.youtube.com/watch?v=example10' },
-      { id: 'english2', label: 'English Video 2', link: 'https://www.youtube.com/watch?v=example11' },
-      { id: 'english3', label: 'English Video 3', link: 'https://www.youtube.com/watch?v=example12' },
-    ],
-  },
-];
+});
+
 
 const Learning = () => {
+  const [subject, setSubject] = useState([]);
+  const fetchSubjects = async () => {
+    try {
+      const response = await axiosInstance.get('/courses');
+      const fetchedSubjects = response.data.courses;
+      setSubject(fetchedSubjects);
+      const initialCheckedState = fetchedSubjects.map(subject => new Array(subject.videos.length).fill(false));
+      setCheckedState(initialCheckedState);
+    } catch (error) {
+      console.error('Error fetching subjects:', error);
+    }
+  };
+
+
   const initialCheckedState = subjects.map(subject => new Array(subject.videos.length).fill(false));
   const [checkedState, setCheckedState] = useState(initialCheckedState);
+  const [selectedSubjectIndex, setSelectedSubjectIndex] = useState('');
 
   const handleCheckboxChange = (subjectIndex, videoIndex) => {
     const updatedCheckedState = checkedState.map((subject, idx) =>
@@ -85,42 +78,63 @@ const Learning = () => {
               <Typography variant="h4" gutterBottom>
                 Course Tracker
               </Typography>
-              {subjects.map((subject, subjectIndex) => (
-                <Card variant="outlined" sx={{ marginBottom: 2 }} key={subject.name}>
-                  <CardContent>
-                    <Typography variant="h5" gutterBottom>
+              <FormControl fullWidth variant="outlined" margin="normal">
+                <InputLabel id="subject-select-label">Select Subject</InputLabel>
+                <Select
+                  labelId="subject-select-label"
+                  id="subject-select"
+                  value={selectedSubjectIndex}
+                  onChange={(e) => setSelectedSubjectIndex(e.target.value)}
+                  label="Select Subject"
+                >
+                  {subjects.map((subject, index) => (
+                    <MenuItem value={index} key={subject.name}>
                       {subject.name}
-                    </Typography>
-                    <Box my={2}>
-                      <LinearProgress variant="determinate" value={calculateProgress(checkedState[subjectIndex])} />
-                      <Typography variant="body1" mt={2}>
-                        Progress: {Math.round(calculateProgress(checkedState[subjectIndex]))}%
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              {selectedSubjectIndex !== '' && (
+                <Box my={4}>
+                  <Card variant="outlined">
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom>
+                        {subjects[selectedSubjectIndex].name}
                       </Typography>
-                    </Box>
-                    <List>
-                      {subject.videos.map((video, videoIndex) => (
-                        <ListItem key={video.id}>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={checkedState[subjectIndex][videoIndex]}
-                                onChange={() => handleCheckboxChange(subjectIndex, videoIndex)}
-                                color="primary"
-                              />
-                            }
-                            label={
-                              <ListItemText
-                                primary={video.label}
-                                secondary={<a href={video.link} target="_blank" rel="noopener noreferrer">Watch</a>}
-                              />
-                            }
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </CardContent>
-                </Card>
-              ))}
+                      <Box my={2}>
+                        <LinearProgress
+                          variant="determinate"
+                          value={calculateProgress(checkedState[selectedSubjectIndex])}
+                        />
+                        <Typography variant="body1" mt={2}>
+                          Progress: {Math.round(calculateProgress(checkedState[selectedSubjectIndex]))}%
+                        </Typography>
+                      </Box>
+                      <List>
+                        {subjects[selectedSubjectIndex].videos.map((video, videoIndex) => (
+                          <ListItem key={video.id}>
+                            <FormControlLabel
+                              control={
+                                <Checkbox
+                                  checked={checkedState[selectedSubjectIndex][videoIndex]}
+                                  onChange={() => handleCheckboxChange(selectedSubjectIndex, videoIndex)}
+                                  color="primary"
+                                />
+                              }
+                              label={
+                                <ListItemText
+                                  primary={video.label}
+                                  secondary={<a href={video.link} target="_blank" rel="noopener noreferrer">Watch</a>}
+                                />
+                              }
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </CardContent>
+                  </Card>
+                </Box>
+              )}
             </Box>
           </Container>
         </Grid>

@@ -9,6 +9,7 @@ import QuizIcon from '@mui/icons-material/Quiz';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import WebhookIcon from '@mui/icons-material/Webhook';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import './Sidebar.css';
 
@@ -24,12 +25,17 @@ const SidebarComponent = () => {
     const handleToggleSidebar = () => {
         setCollapsed(!collapsed);
     };
+    const sendWhatsAppMessage = () => {
+        const whatsappURL = "https://wa.me/8104025348";
+        window.location.href = whatsappURL;
+      };
 
     return (
         <div className={`sidebar ${collapsed ? 'collapsed' : ''} relative`}>
             <Sidebar collapsed={collapsed}>
                 <Menu>
-                    <MenuItem onClick={handleToggleSidebar} className='mt-12'>
+                    <MenuItem onClick={handleToggleSidebar} component={<Link to="/studentDashboard" />}
+                    className='mt-12'>
                         {
                             collapsed ? <DoubleArrowIcon />
                                 : (
@@ -97,6 +103,17 @@ const SidebarComponent = () => {
                                 )
                         }
                     </MenuItem>
+                    <MenuItem className='mt-4'>
+                        {
+                            collapsed ? <div onClick={sendWhatsAppMessage}><WhatsAppIcon /></div>
+                                : (
+                                    <div className='flex justify-start items-center' onClick={sendWhatsAppMessage}>
+                                    <WhatsAppIcon />
+                                        <div className='ml-2'>Connect with Mentor</div>
+                                    </div>
+                                )
+                        }
+                    </MenuItem>
                 </Menu>
             </Sidebar>
 

@@ -13,6 +13,10 @@ const Role = () => {
     navigate('/mentorProfile');
   };
 
+  const handleAdminClick = () => {
+    navigate('/adminDashboard');
+  };
+
   return (
     <Container maxWidth="sm">
       <Box 
@@ -55,6 +59,22 @@ const Role = () => {
             }}
           >
             Mentor
+          </Button>
+        </Box>
+        <Box my={2}>
+          <Button 
+            variant="contained" 
+            size="large" 
+            fullWidth 
+            onClick={handleAdminClick}
+            style={{ 
+              fontSize: '1.5rem', 
+              padding: '20px', 
+              backgroundColor: '#57321A', 
+              color: 'white' 
+            }}
+          >
+            Admin
           </Button>
         </Box>
       </Box>
